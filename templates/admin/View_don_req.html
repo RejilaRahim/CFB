@@ -1,0 +1,52 @@
+{% extends "admin/Ad_home.html" %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="500" border="1" align="center" class="table table-hover">
+    <tr>
+      <td>Sl.no</td>
+      <td>Donation</td>
+      <td>Amount</td>
+      <td>Date</td>
+      <td>Total donation</td>
+      <td>Status</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{loop.index}}</td>
+      <td>&nbsp;{{ i['donation']}}</td>
+      <td>{{ i['amount']}}</td>
+      <td>{{ i['date']}}</td>
+      <td>{{ i['s']}}</td>
+      <td>&nbsp;{% if i.status == 'pending' %}
+          <a href="/updatedonation/{{ i.req_ID }}">
+          {% if i.s|string == i.amount|string %}
+              <font color="red">Set as Closed</font>
+              {% else %}
+               Set as Closed
+          {% endif %}
+
+
+          </a>
+          {% else %}
+
+          {{ i['status'] }}
+
+          {% endif %}
+      <br><br><a href="/view_donr/{{ i.req_ID }}">Donations</a>
+      </td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Donation Details</title>
+     <link href="/static/user/regis/css/main.css" rel="stylesheet" media="all">
+    <link rel="stylesheet" href="/static/Login/css/style.css">
+</head>
+<body>
+{% if data %}
+{{ data }}  Amount is Target to reach
+{% endif %}
+<form id="form1" name="form1" method="post" action="">
+  <table  width="500" border="1" align="center" class="table table-hover">
+    <tr>
+      <td>ACC NUMBER</td>
+      <td><label for="textfield"></label>
+      <input class="input--style-5" type="text" name="textfield" id="textfield" /></td>
+    </tr>
+    <tr>
+      <td>PIN</td>
+      <td><label for="textfield2"></label>
+      <input class="input--style-5" type="text" name="textfield2" id="textfield2" /></td>
+    </tr>
+    <tr>
+      <td>AMOUNT</td>
+      <td><label for="textfield3"></label>
+      <input class="input--style-5" type="text" name="textfield3" id="textfield3" /></td>
+    </tr>
+    <tr align="center">
+      <td colspan="2"><input class="form-control btn btn-primary rounded submit px-3"  type="submit" name="button" id="button" value="Submit" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
